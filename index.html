@@ -20,11 +20,19 @@
 </head>
 
 <body>
+    <!-- ===== HERO SECTION ===== -->
     <div class="hero-section">
+        <!-- ✅ Spline 3D background -->
+        <div class="spline-container">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.99/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/7xIRPEzYvjTkm5O9/scene.splinecode"></spline-viewer>
+        </div>
+
+        <!-- Contenuto principale -->
         <div class="about-text hover-target">Info</div>
         <div class="contact-text hover-target">Contatti</div>
         <div class="section-center">
-            <div class="container-fluid">
+            <div class="container-fluid hero-content">
                 <div class="row justify-content-center">
                     <div class="col-12 text-center">
                         <h1>Matteo Castellano</h1>
@@ -34,7 +42,6 @@
                     </div>
                     <div class="col-12 text-center mt-4 mt-lg-5">
                         <p>
-
                             <span class="curriculum hover-target">Curriculum</span>
                             <span class="skill hover-target">Competenze Tecniche</span>
                             <span class="project hover-target">Progetti</span>
@@ -45,6 +52,7 @@
         </div>
     </div>
 
+    <!-- ===== ABOUT SECTION ===== -->
     <div class="about-section">
         <div class="about-close hover-target"></div>
         <div class="section-center">
@@ -69,12 +77,12 @@
                             continuo. Sono desideroso di apprendere nuove tecnologie e contribuire a
                             progetti innovativi</p>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ===== CONTACT SECTION ===== -->
     <div class="contact-section">
         <div class="contact-close hover-target"></div>
         <div class="section-center">
@@ -95,6 +103,7 @@
         </div>
     </div>
 
+    <!-- ===== PROJECT SECTION ===== -->
     <div class="project-section">
         <div class="project-close hover-target"></div>
         <div class="container">
@@ -111,37 +120,11 @@
                 <div class="col-md-6 col-lg-4">
                     <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="http://www.ivang-design.com/svg-load/portfolio/photo-p.jpg" alt="">
-                </div>
             </div>
         </div>
     </div>
 
+    <!-- ===== SKILL SECTION ===== -->
     <div class="skill-section">
         <div class="skill-close hover-target"></div>
         <div class="container">
@@ -238,11 +221,11 @@
                     <img
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" />
                 </div>
-
             </div>
         </div>
     </div>
 
+    <!-- ===== CURRICULUM SECTION ===== -->
     <div class="curriculum-section">
         <div class="curriculum-close hover-target"></div>
         <div class="container">
@@ -253,12 +236,9 @@
                 <div class="col-12 text-center mt-4">
                     <div class="cv-preview">
                         <iframe src="documents/Cv_CastellanoMatteo (1).pdf" width="80%" height="600px"
-                            style="border: none; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4);">
-                        </iframe>
+                            style="border: none; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4);"></iframe>
                     </div>
                 </div>
-
-                <!-- Pulsante di download -->
                 <div class="col-12 text-center mt-4">
                     <a href="documents/Cv_CastellanoMatteo (1).pdf" download class="download-btn hover-target">
                         Scarica il Curriculum
@@ -268,12 +248,6 @@
         </div>
     </div>
 
-    <div class='cursor' id="cursor"></div>
-    <div class='cursor2' id="cursor2"></div>
-    <div class='cursor3' id="cursor3"></div>
-
-    <!-- Link to page
-================================================== -->
 
     <a href="" class="link-to-portfolio hover-target"></a>
 </body>
