@@ -1,0 +1,878 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #1f2029;
+    overflow: hidden;
+    height: 100vh;
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+    perspective: 800px;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+::selection {
+    color: #c4c3ca;
+    background-color: #000;
+}
+
+::-moz-selection {
+    color: #c4c3ca;
+    background-color: #000;
+}
+
+/* #Cursor
+================================================== */
+
+.cursor,
+.cursor2,
+.cursor3 {
+    position: fixed;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    left: -100px;
+    top: 50%;
+    mix-blend-mode: difference;
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+/* piccolo alone sfumato sotto il cursore */
+.cursor {
+    height: 12px;
+    /* dimensione dell'ombra */
+    width: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    /* alone bianco trasparente */
+    border-radius: 50%;
+    filter: blur(6px);
+    /* sfumatura morbida */
+    z-index: 99999;
+}
+
+/* cursori principali */
+.cursor2,
+.cursor3 {
+    height: 36px;
+    width: 36px;
+    z-index: 99998;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+/* effetto hover */
+.cursor2.hover,
+.cursor3.hover {
+    -webkit-transform: scale(2) translateX(-25%) translateY(-25%);
+    transform: scale(2) translateX(-25%) translateY(-25%);
+    border: none;
+}
+
+/* bordo del cursore principale */
+.cursor2 {
+    border: 2px solid #fff;
+}
+
+/* effetto hover cursore principale */
+.cursor2.hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: transparent;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .cursor,
+    .cursor2,
+    .cursor3 {
+        display: none
+    }
+}
+
+
+.hover-target.text-dark {
+    color: #000 !important;
+    /* testo più scuro */
+}
+
+/* #Primary style
+================================================== */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    height: 100vh;
+    background-image: url('image/MelRibeiro.gif');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1) rotateX(0);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+    -webkit-transition-delay: 400ms;
+    transition-delay: 400ms;
+    transform-origin: center top;
+}
+
+.hero-section h1 {
+    color: #fff;
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 900;
+    text-shadow:
+        -1px -1px 2px rgba(0, 0, 0, 0.8),
+        1px -1px 2px rgba(0, 0, 0, 0.8),
+        -1px 1px 2px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.hero-section .dancing {
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+    text-shadow:
+        -1px -1px 2px rgba(0, 0, 0, 0.8),
+        1px -1px 2px rgba(0, 0, 0, 0.8),
+        -1px 1px 2px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 580px) {
+    .hero-section .dancing {
+        font-size: 18px;
+    }
+}
+
+.hero-section p {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.hero-section p span {
+    margin-left: 15px;
+    margin-right: 15px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-bottom: 35px;
+}
+
+.hero-section p span:before {
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    left: 50%;
+    height: 30px;
+    width: 30px;
+    margin-left: -15px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+    background-image: url('http://www.ivang-design.com/svg-load/portfolio/down.svg');
+    opacity: 0.2;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.hero-section p span:hover:before {
+    opacity: 1;
+    bottom: 5px;
+}
+
+body.about-on .hero-section {
+    transform: scale(0.75);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+body.contact-on .hero-section {
+    transform: scale(0.75);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+body.project-on .hero-section {
+    transform: rotateX(-10deg);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+body.skill-on .hero-section {
+    transform: rotateX(-10deg);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+body.curriculum-on .hero-section {
+    transform: rotateX(-10deg);
+    -webkit-transition-delay: 0ms;
+    transition-delay: 0ms;
+}
+
+.about-text {
+    position: absolute;
+    font-size: 22px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    top: 50%;
+    left: 40px;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    transform: translateY(-50%);
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.about-text:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: -25px;
+    height: 30px;
+    width: 30px;
+    margin-top: -15px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+    background-image: url('http://www.ivang-design.com/svg-load/portfolio/left.svg');
+    opacity: 0.2;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.about-text:hover:before {
+    opacity: 1;
+    left: -30px;
+}
+
+.about-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    height: 100vh;
+    background-color: rgba(31, 32, 41, 1);
+    transform: translateX(-100%);
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+    z-index: 10;
+}
+
+body.about-on .about-section {
+    transform: translateX(0);
+    -webkit-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+
+.about-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    display: block;
+    overflow: hidden;
+    height: 30px;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+    background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+    cursor: pointer;
+    z-index: 11;
+}
+
+.about-close:hover {
+    transform: rotate(90deg);
+}
+
+.section-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.about-section img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    /* 🔥 mantiene il rapporto senza stirare */
+    object-position: center;
+    /* centra il soggetto */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-section p span {
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 1px;
+    color: #866BAF;
+    font-size: 40px;
+    font-weight: 400;
+    text-shadow:
+        -1px -1px 2px rgba(0, 0, 0, 0.8),
+        1px -1px 2px rgba(0, 0, 0, 0.8),
+        -1px 1px 2px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.about-section p {
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow:
+        -1px -1px 2px rgba(0, 0, 0, 0.8),
+        1px -1px 2px rgba(0, 0, 0, 0.8),
+        -1px 1px 2px rgba(0, 0, 0, 0.8),
+        1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.contact-text {
+    position: absolute;
+    font-size: 22px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    top: 50%;
+    right: 40px;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    transform: translateY(-50%) rotate(180deg);
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.contact-text:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: -25px;
+    height: 30px;
+    width: 30px;
+    margin-top: -15px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+    background-image: url('http://www.ivang-design.com/svg-load/portfolio/left.svg');
+    opacity: 0.2;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.contact-text:hover:before {
+    opacity: 1;
+    left: -30px;
+}
+
+.contact-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    height: 100vh;
+    background-color: rgba(31, 32, 41, 1);
+    transform: translateX(100%);
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+    z-index: 10;
+}
+
+body.contact-on .contact-section {
+    transform: translateX(0);
+    -webkit-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+
+.contact-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    display: block;
+    overflow: hidden;
+    height: 30px;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+    background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+    cursor: pointer;
+    z-index: 11;
+}
+
+.contact-close:hover {
+    transform: rotate(90deg);
+}
+
+.contact-section a {
+    margin: 0 auto;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #fff;
+    display: inline-block;
+}
+
+.contact-section .social a {
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #866BAF;
+}
+
+@media screen and (max-width: 580px) {
+    .contact-section a {
+        font-size: 17px;
+    }
+
+    .contact-section .social a {
+        margin-left: 3px;
+        margin-right: 3px;
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+}
+
+.project-section,
+.skill-section,
+.curriculum-section {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    padding: 100px 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(31, 32, 41, 1);
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+    z-index: 10;
+}
+
+.project-close,
+.skill-close,
+.curriculum-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    display: block;
+    overflow: hidden;
+    height: 30px;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 36px;
+    background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+    cursor: pointer;
+    z-index: 11;
+}
+
+.project-close:hover,
+.skill-close:hover,
+.curriculum-close:hover {
+    transform: rotate(90deg);
+}
+
+body.project-on .project-section {
+    top: 0;
+    -webkit-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+
+body.skill-on .skill-section {
+    top: 0;
+    -webkit-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+
+body.curriculum-on .curriculum-section {
+    top: 0;
+    -webkit-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+
+.project-section img,
+.skill-section img,
+.curriculum-section img {
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-section h3,
+.skill-section h3,
+.curriculum-section h3 {
+    font-size: 44px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.project-section p,
+.skill-section p,
+.curriculum-section p {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+}
+
+.project-section p span,
+.skill-section p span,
+.curriculum-section p span {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #866BAF;
+}
+
+.cv-preview {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #866BAF;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn:hover {
+    background-color: #a084d8;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive per mobile */
+@media screen and (max-width: 768px) {
+    .cv-preview iframe {
+        width: 95%;
+        height: 400px;
+    }
+}
+
+/* #Link to page
+================================================== */
+
+.link-to-portfolio {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 200;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 3px;
+    background-position: center center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-image: url('image/imgPortfolio.jpg');
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .1);
+    transition: opacity .2s, border-radius .2s, box-shadow .2s;
+    transition-timing-function: ease-out;
+}
+
+.link-to-portfolio:hover {
+    opacity: 0.8;
+    border-radius: 50%;
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, .1);
+}
+
+html,
+body {
+    background-color: #1f2029 !important;
+}
+
+body,
+.hero-section,
+.about-section,
+.contact-section,
+.project-section,
+.skill-section,
+.curriculum-section {
+    background-color: #1f2029 !important;
+}
+
+/*.about-section,
+.contact-section,
+.project-section,
+.skill-section,
+.curriculum-section {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow-y: auto !important; /* scroll interno se necessario 
+    padding: 20px;
+}
+
+body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+*/
+
+@media (max-width: 768px) {
+
+    /* Generale */
+    html,
+    body {
+        font-size: 16px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        height: 100%;
+    }
+
+    h1,
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-section .dancing {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    /* Le scritte “Curriculum / Competenze / Progetti” */
+    .hero-section p {
+        display: flex;
+        flex-direction: column; /* ✅ in colonna */
+        align-items: center;
+        gap: 15px; /* spazio verticale tra le voci */
+        margin-top: 10px;
+        position: relative;
+        bottom: auto; /* rimuove l'ancoraggio al fondo */
+        left: auto;
+        transform: none;
+        
+    }
+
+    .hero-section p span {
+        display: block;
+        font-size: 1.2rem;
+        color: #fff;
+        letter-spacing: 1px;
+        padding-bottom: 5px;
+        text-shadow:
+            -1px -1px 2px rgba(0, 0, 0, 0.8),
+             1px -1px 2px rgba(0, 0, 0, 0.8),
+            -1px  1px 2px rgba(0, 0, 0, 0.8),
+             1px  1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-section p span:before {
+        display: none; /* 🔥 rimuove l’icona decorativa per un look più pulito su mobile */
+    }
+
+    /* About Section */
+    .about-section img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .about-section p {
+        font-size: 0.95rem;
+        padding: 0 15px;
+    }
+
+    /* Skill Section */
+    .skill-section img {
+        width: 70px;
+        height: auto;
+        margin: 10px auto;
+        display: block;
+    }
+
+    /* Project Section */
+    .project-section img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* Curriculum Section */
+    .cv-preview iframe {
+        width: 95%;
+        height: 400px;
+        border-radius: 10px;
+    }
+
+    .download-btn {
+        display: inline-block;
+        background-color: #ffffff20;
+        border: 1px solid #fff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+        background-color: #ffffff40;
+    }
+
+    /* Contatti e Social */
+    .contact-section a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+
+    /* Cursor – disattiva su mobile */
+    .cursor,
+    .cursor2,
+    .cursor3 {
+        display: none !important;
+    }
+
+    /* Layout di contenitore generale */
+    .container,
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Evita lo sfondo bianco durante le transizioni */
+    body,
+    html {
+        background-color: #0a0a0a !important;
+        /* stesso colore dello sfondo principale */
+    }
+
+    .hero-section {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
+    }
+
+    /* Sezioni aggiuntive inizialmente nascoste */
+    .about-section,
+    .contact-section,
+    .project-section,
+    .skill-section,
+    .curriculum-section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(100%);
+        /* fuori schermo a destra */
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        /* scroll interno se necessario */
+        z-index: 10;
+        background-color: rgba(31, 32, 41, 1);
+    }
+
+    /* Quando la sezione è aperta */
+    body.about-on .about-section,
+    body.contact-on .contact-section,
+    body.project-on .project-section,
+    body.skill-on .skill-section,
+    body.curriculum-on .curriculum-section {
+        transform: translateX(0);
+        /* entra a schermo */
+    }
+
+    /* Blocca scroll body quando una sezione è aperta */
+    body.about-on,
+    body.contact-on,
+    body.project-on,
+    body.skill-on,
+    body.curriculum-on {
+        overflow: hidden;
+        height: 100vh;
+    }
+}
